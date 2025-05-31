@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Gowun_Dodum, Nanum_Myeongjo, Song_Myung } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const gowunDodum = Gowun_Dodum({
   subsets: ["latin"],
+  weight: "400",
+  variable: "--font-gowun-dodum",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const nanumMyeongjo = Nanum_Myeongjo({
+  weight: ["400", "700"],
   subsets: ["latin"],
+  variable: "--font-nanum-myeongjo",
+});
+
+const songMyung = Song_Myung({
+  weight: "400",
+  variable: "--font-song-myung",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +32,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-red antialiased`}
+        className={`${gowunDodum.variable} ${nanumMyeongjo.variable} ${songMyung.variable} text-lg leading-relaxed tracking-tight antialiased`}
       >
-        {children}
+        <div className="w-full h-full shadow-2xl">{children}</div>
       </body>
     </html>
   );

@@ -1,62 +1,24 @@
-import AccountSection from "./components/AccountSection";
-import AttendPopup from "./components/AttendPopup";
-import BottomNavigation from "./components/BottomNavigation";
-import CountdownTimer from "./components/CountdownTimer";
-import CoupleInfo from "./components/CoupleInfo";
-import FadeInSection from "./components/FadeInSection";
-import FlowerEffect from "./components/FlowerEffect";
-import FooterSection from "./components/FooterSection";
-import GallerySection from "./components/GallerySection";
-import GuestbookSection from "./components/GuestbookSection";
-import InvitationMessage from "./components/InvitationMessage";
-import MapSection from "./components/MapSection";
-import WeddingCover from "./components/WeddingCover";
-import WeddingInfo from "./components/WeddingInfo";
+import MainCover01 from "../components/01_Main/01";
+import { weddingInfo, footer } from "@/utils/data";
+import FooterSection from "../components/Layout/Footer";
+import PreparePopup from "@/components/Popup/PreparePopup";
 
 export default function Home() {
   return (
-    <main className="flex flex-col max-w-xl w-full mx-auto border-l-2 border-r-2 bg-white items-center">
-      <AttendPopup />
-      <FlowerEffect />
-      <WeddingCover
-        groomName="LEE SUNG HUN"
-        brideName="KIM CHE YEON"
-        weddingDate="November 16, 2025"
-        mainMessage="Always be with you"
-        imageUrl="/your-image.jpg"
-      />
-      <FadeInSection>
-        <InvitationMessage />
+    <main className="relative flex flex-col max-w-lg w-full mx-auto bg-background items-center">
+      <PreparePopup />
+
+      <MainCover01 info={weddingInfo} />
+      {/* <hr className="border-4 w-full" />
+      <FadeInSection repeat={false}>
+        <Invitation01 contacts={familyContacts} />
       </FadeInSection>
-      <FadeInSection>
-        <CoupleInfo />
+      <hr className="border-4 w-full" />
+      <FadeInSection repeat={true}>
+        <Schedule01 info={weddingInfo} />
       </FadeInSection>
-      <FadeInSection>
-        <WeddingInfo />
-      </FadeInSection>
-      <FadeInSection>
-        <MapSection />
-      </FadeInSection>
-      <FadeInSection>
-        <GallerySection />
-      </FadeInSection>
-      <FadeInSection>
-        <AccountSection />
-      </FadeInSection>
-      <FadeInSection>
-        <GuestbookSection />
-      </FadeInSection>
-      <FadeInSection>
-        <CountdownTimer
-          targetDate="2025-11-16T13:00:00"
-          groomName="성훈"
-          brideName="채연"
-        />
-      </FadeInSection>
-      <FadeInSection>
-        <FooterSection />
-      </FadeInSection>
-      <BottomNavigation />
+      <hr className="border-4 w-full" /> */}
+      <FooterSection footer={footer} />
     </main>
   );
 }
