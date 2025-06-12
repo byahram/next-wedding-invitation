@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button } from "../ui/Buttons";
+import { Button } from "../common/Buttons";
 
 export default function PreparePopup() {
   const [showPreparePopup, SetShowPreparingPopup] = useState(true);

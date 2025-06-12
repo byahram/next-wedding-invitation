@@ -1,22 +1,24 @@
 import type { Metadata } from "next";
-import { Gowun_Dodum, Nanum_Myeongjo, Song_Myung } from "next/font/google";
+import { Noto_Serif_KR, Parisienne, Nanum_Pen_Script } from "next/font/google";
 import "./globals.css";
 
-const gowunDodum = Gowun_Dodum({
-  subsets: ["latin"],
+const parisienne = Parisienne({
   weight: "400",
-  variable: "--font-gowun-dodum",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-parisienne",
 });
 
-const nanumMyeongjo = Nanum_Myeongjo({
+const notoSerif = Noto_Serif_KR({
   weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-nanum-myeongjo",
+  variable: "--font-noto-serif-kr",
 });
 
-const songMyung = Song_Myung({
+const nanumPen = Nanum_Pen_Script({
   weight: "400",
-  variable: "--font-song-myung",
+  subsets: ["latin"],
+  variable: "--font-nanum-pen",
 });
 
 export const metadata: Metadata = {
@@ -32,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${gowunDodum.variable} ${nanumMyeongjo.variable} ${songMyung.variable} text-lg leading-relaxed tracking-tight antialiased`}
+        className={`${notoSerif.variable} ${nanumPen.variable} ${parisienne.variable} text-base leading-relaxed tracking-tight antialiased`}
       >
         <div className="w-full h-full shadow-2xl">{children}</div>
       </body>
