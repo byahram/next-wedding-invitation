@@ -1,12 +1,12 @@
 import React from "react";
 
-type FooterProps = {
+type FooterSectionProps = {
   footer: {
     footerText: string;
   };
 };
 
-export default function Footer({ footer }: FooterProps) {
+export default function FooterSection({ footer }: FooterSectionProps) {
   const { footerText } = footer;
   return (
     <footer className="w-full px-4 py-8 text-center text-gray-500 text-sm leading-relaxed whitespace-pre-line">

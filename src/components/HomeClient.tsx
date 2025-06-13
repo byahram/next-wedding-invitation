@@ -13,7 +13,7 @@ import RSVP from "./sections/07_RSVP";
 import Ending from "./sections/08_Ending";
 import FadeInSection from "./effect/FadeInSection";
 import { main, footer, accounts, contacts, gallery } from "@/utils/data";
-import Footer from "@/components/layout/Footer";
+import FooterSection from "./layout/FooterSection";
 
 export default function HomeClient() {
   const [isLoaded, setIsLoaded] = useState(true);
@@ -55,7 +55,7 @@ export default function HomeClient() {
 인터뷰 - Interview
 방명록 – 축하 메시지 남기는 공간 - Guest book
 */}
-          <Footer footer={footer} />
+          <FooterSection footer={footer} />
 
           <FloatingButtons />
         </main>
