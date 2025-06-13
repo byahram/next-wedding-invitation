@@ -20,7 +20,10 @@ export type MainInfo = {
   weddingDate: string;
   weddingDay: string;
   weddingTime: string;
+  weddingTxt: string;
   weddingLoc: string;
+  weddingAddress: string;
+  calBlank: string;
 };
 
 export interface IMainInfo {

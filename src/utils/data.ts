@@ -1,3 +1,4 @@
+// 1. 메인 - Main
 export const main = {
   groom: {
     nameKo: "김지훈",
@@ -14,15 +15,19 @@ export const main = {
   images: {
     mainImage:
       "https://plus.unsplash.com/premium_photo-1711132425055-1c289c69b950?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    subImage_1: "/image/CSC_8767.jpg",
+    subImage_1: "/image/subimage1.jpg",
     subImage_2: "/image/subImage2.png",
   },
   weddingDate: "2025-09-06",
   weddingDay: "토요일",
   weddingTime: "오전 11시 30분",
+  weddingTxt: "구월의\n여섯번째 날.",
   weddingLoc: "국방컨벤션 1층 에메랄드홀",
+  weddingAddress: "서울 용산구 이태원로 22",
+  calBlank: "1",
 };
 
+// 2. 연락처 - Contacts
 export const contacts = [
   {
     role: "신랑",
@@ -55,15 +60,6 @@ export const contacts = [
     phone: "010-4877-4655",
   },
 ];
-
-// 3. 달력 - Calendar
-export const calendar = {
-  monthDay: "구월의\n여섯번째 날.",
-  weekdays: ["일", "월", "화", "수", "목", "금", "토"],
-  month: "9",
-  day: "6",
-  blank: "1",
-};
 
 // 4. 갤러리 - Gallery
 export const gallery = [

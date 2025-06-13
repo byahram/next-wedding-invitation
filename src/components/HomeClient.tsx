@@ -5,7 +5,7 @@ import MainCover from "@/components/sections/01_MainCover";
 import Introduction from "@/components/sections/02_Introduction";
 import Calendar from "@/components/sections/03_Calendar";
 import Gallery from "@/components/sections/04_Gallery";
-import Location from "@/components/sections/05_Location";
+// import Location from "@/components/sections/05_Location";
 import FooterSection from "@/components/layout/Footer";
 import FloatingButtons from "@/components/layout/FloatingButtons";
 import LoadingScreen from "@/components/effect/LoadingScreen";
@@ -13,7 +13,7 @@ import Account from "./sections/06_Account";
 import RSVP from "./sections/07_RSVP";
 import Ending from "./sections/08_Ending";
 import FadeInSection from "./effect/FadeInSection";
-import { main, footer, accounts } from "@/utils/data";
+import { main, footer, accounts, contacts, gallery } from "@/utils/data";
 
 export default function HomeClient() {
   const [isLoaded, setIsLoaded] = useState(true);
@@ -24,16 +24,18 @@ export default function HomeClient() {
       {isLoaded && (
         <main className="relative flex flex-col max-w-md w-full mx-auto bg-background items-center">
           <MainCover info={main} />
-          {/* <Introduction intro={intro} info={main} />
+          <Introduction contacts={contacts} info={main} />
           <FadeInSection>
-            <Calendar cal={calendar} info={main} />
+            <Calendar info={main} />
           </FadeInSection>
           <FadeInSection>
             <Gallery gal={gallery} />
           </FadeInSection>
+          {/* <hr className="w-full h-3 bg-red" />
           <FadeInSection>
-            <Location />
-          </FadeInSection> */}
+            <Location info={main} />
+          </FadeInSection>
+          <hr className="w-full h-3 bg-red" /> */}
           <FadeInSection>
             <Account acc={accounts} />
           </FadeInSection>

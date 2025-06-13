@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Serif_KR, Parisienne, Nanum_Pen_Script } from "next/font/google";
+
 import "./globals.css";
 
 const parisienne = Parisienne({

@@ -18,6 +18,7 @@ const buttonVariants = cva(
         icon_text:
           "flex justify-center items-center gap-1.5 text-md rounded-lg bg-neutral-100 border border-neutral-300 text-neutral-600 shadow-none",
         account: "flex justify-between items-center w-full shadow-none",
+        slider_icon: "absolute text-foreground z-10 cursor-pointer shadow-none",
       },
       size: {
         default: "px-10 py-3",
@@ -25,6 +26,7 @@ const buttonVariants = cva(
         icon: "px-2 py-1",
         icon_text: "px-2 py-2",
         account: "py-3 px-6",
+        slider_icon: "text-3xl",
       },
     },
     defaultVariants: {

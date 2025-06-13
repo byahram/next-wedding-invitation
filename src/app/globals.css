@@ -4,14 +4,13 @@
 
 :root {
   --background: #ffffff;
-  /* --background2: #e9e9e9; */
   --background2: #f7f7f7;
   --foreground: #333333;
   --txt: #171717;
   --primary: #ef4444;
   --secondary: #3b82f6;
   --title1: #d1b7a1;
-  --countBox: #f7f5f2;
+  --countBox: #f9f9f9;
   --countTxt: #9b7f75;
 }
 
