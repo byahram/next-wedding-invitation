@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import SectionTitle from "../common/SectionTitle";
 import { IoClose, IoChevronBack, IoChevronForward } from "react-icons/io5";
 import { Button } from "../common/Buttons";
@@ -16,34 +16,6 @@ export default function Gallery({ gal }: GalleryProps) {
   const [showAll, setShowAll] = useState(false);
   const visibleImages = showAll ? gal : gal.slice(0, 12);
 
-  const [scale, setScale] = useState(1);
-  const [lastTouchDistance, setLastTouchDistance] = useState<number | null>(
-    null
-  );
-  const getDistance = (touches: TouchList) => {
-    const [a, b] = [touches[0], touches[1]];
-    return Math.sqrt(
-      Math.pow(a.clientX - b.clientX, 2) + Math.pow(a.clientY - b.clientY, 2)
-    );
-  };
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (e.touches.length === 2) {
-      const distance = getDistance(e.touches);
-      if (lastTouchDistance) {
-        const delta = distance - lastTouchDistance;
-        const newScale = Math.min(Math.max(scale + delta * 0.005, 1), 3); // 1~3배 제한
-        setScale(newScale);
-      }
-      setLastTouchDistance(distance);
-    }
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (e.touches.length < 2) {
-      setLastTouchDistance(null);
-    }
-  };
-
   const closeModal = () => setSelectedIndex(null);
   const showPrev = () =>
     setSelectedIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : prev));
@@ -51,17 +23,6 @@ export default function Gallery({ gal }: GalleryProps) {
     setSelectedIndex((prev) =>
       prev !== null && prev < gal.length - 1 ? prev + 1 : prev
     );
-
-  useEffect(() => {
-    if (selectedIndex !== null) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [selectedIndex]);
 
   return (
     <section
@@ -71,7 +32,7 @@ export default function Gallery({ gal }: GalleryProps) {
       <div className="relative flex-col justify-center items-center text-center">
         <SectionTitle title="Gallery" />
 
-        <div className="relative w-full mt-16">
+        <div className="relative w-full">
           <div className="grid grid-cols-3 gap-2">
             {visibleImages.map((src, index) => (
               <img
@@ -135,11 +96,7 @@ export default function Gallery({ gal }: GalleryProps) {
                 </Button>
               )}
 
-              <div
-                className="w-full h-full flex items-center justify-center transition-all duration-500 ease-in-out"
-                onTouchMove={handleTouchMove}
-                onTouchEnd={handleTouchEnd}
-              >
+              <div className="w-full h-full flex items-center justify-center transition-all duration-500 ease-in-out">
                 <img
                   src={gal[selectedIndex]}
                   alt={`carousel-${selectedIndex}`}

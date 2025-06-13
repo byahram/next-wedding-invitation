@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import { IMainInfo } from "@/utils/types";
 import { formatDate } from "@/utils/utils";
+import Image from "next/image";
 import React from "react";
 
 export default function MainCover({ info }: IMainInfo) {
@@ -14,12 +14,14 @@ export default function MainCover({ info }: IMainInfo) {
       className="relative w-full max-w-xl mx-auto overflow-hidden"
     >
       <div className="relative">
-        <img
-          src={info.images.mainImage}
-          alt="Wedding Cover"
-          // className="w-full h-full object-cover"
-          className="w-full h-full aspect-[3/4] object-cover"
-        />
+        <div className="relative aspect-[3/4] w-full">
+          <Image
+            src={info.images.mainImage}
+            alt="Wedding Cover"
+            fill
+            className="object-cover"
+          />
+        </div>
 
         <div
           aria-hidden="true"

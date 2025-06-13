@@ -6,6 +6,7 @@ type QuoteProps = {
   image: string;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function Quote({ quote, image }: QuoteProps) {
   return (
     <section

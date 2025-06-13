@@ -6,7 +6,7 @@ import Introduction from "@/components/sections/02_Introduction";
 import Calendar from "@/components/sections/03_Calendar";
 import Gallery from "@/components/sections/04_Gallery";
 // import Location from "@/components/sections/05_Location";
-import FooterSection from "@/components/layout/Footer";
+import Footer from "@/components/layout/Footer";
 import FloatingButtons from "@/components/layout/FloatingButtons";
 import LoadingScreen from "@/components/effect/LoadingScreen";
 import Account from "./sections/06_Account";
@@ -55,7 +55,7 @@ export default function HomeClient() {
 인터뷰 - Interview
 방명록 – 축하 메시지 남기는 공간 - Guest book
 */}
-          <FooterSection footer={footer} />
+          <Footer footer={footer} />
 
           <FloatingButtons />
         </main>
