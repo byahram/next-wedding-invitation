@@ -13,7 +13,7 @@ import RSVP from "./sections/07_RSVP";
 import Ending from "./sections/08_Ending";
 import FadeInSection from "./effect/FadeInSection";
 import { main, footer, accounts, contacts, gallery } from "@/utils/data";
-import Footer from "./layout/Footer";
+import Footer from "@/components/layout/Footer";
 
 export default function HomeClient() {
   const [isLoaded, setIsLoaded] = useState(true);
