@@ -6,7 +6,6 @@ import Introduction from "@/components/sections/02_Introduction";
 import Calendar from "@/components/sections/03_Calendar";
 import Gallery from "@/components/sections/04_Gallery";
 // import Location from "@/components/sections/05_Location";
-import Footer from "@/components/layout/Footer";
 import FloatingButtons from "@/components/layout/FloatingButtons";
 import LoadingScreen from "@/components/effect/LoadingScreen";
 import Account from "./sections/06_Account";
@@ -14,6 +13,7 @@ import RSVP from "./sections/07_RSVP";
 import Ending from "./sections/08_Ending";
 import FadeInSection from "./effect/FadeInSection";
 import { main, footer, accounts, contacts, gallery } from "@/utils/data";
+import Footer from "./layout/Footer";
 
 export default function HomeClient() {
   const [isLoaded, setIsLoaded] = useState(true);
